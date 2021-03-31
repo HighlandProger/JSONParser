@@ -1,0 +1,7 @@
+Чтобы запустить проект откройте терминал в текущей папке и введите следующие команды:
+
+- mvn clean compile
+- mvn exec:java -Dexec.mainClass="Ticket" -Dexec.args="(передайте сюда путь к файлу tickets.json. Пример: /home/user/tickets.json)"
+
+Поверх строки "BUILD SUCCESS" вы увидите обработанные данные.
+
