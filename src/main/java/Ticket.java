@@ -87,11 +87,13 @@ public class Ticket {
         return avgMinutes;
     }
     public String get90Percentile (ArrayList<Long> timeList){
-        double percentile = 0.9 * getSumMinutes(timeList)/timeList.size();
-        int hours = (int) percentile/60;
-        int minutes = (int) percentile%60;
-        String result = "90 percentile time is: " + hours + " hours and " + minutes % 60 + " minutes";
-        return result;
+        Collections.sort(timeList);
+        int numberOfElement = (int) (0.9 * timeList.size())-1;
+        long result = timeList.get(numberOfElement);
+        int hours = (int) result/60;
+        int minutes = (int) result%60;
+        String resultString = "new 90 percentile time is: " + hours + " hours and " + minutes % 60 + " minutes";
+        return resultString;
     }
 
     public String getResult(long avgMinutes) {
